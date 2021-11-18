@@ -20,6 +20,15 @@ public class Topico {
 	public int getId() {
 		return id;
 	}
+	public Topico() {
+		
+	}
+	public Topico(int id, String nomeTopico, int idUsuario) {
+		super();
+		this.id = id;
+		this.nomeTopico = nomeTopico;
+		this.idUsuario = idUsuario;
+	}
 	public void setId(int id) {
 		this.id = id;
 	}

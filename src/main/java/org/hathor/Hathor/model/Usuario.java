@@ -29,6 +29,9 @@ public class Usuario {
 	public void setId(int id) {
 		this.id = id;
 	}
+	public Usuario() {
+		
+	}
 	public Usuario(int id, String nome, Date dtCadastro, String email, String senha) {
 		super();
 		this.id = id;

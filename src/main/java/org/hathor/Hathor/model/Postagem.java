@@ -25,6 +25,16 @@ public class Postagem {
 	public int getId() {
 		return id;
 	}
+	public Postagem() {
+	}
+	public Postagem(int id, String corpo, String titulo, int idUsuario, Date dtPostagem) {
+		super();
+		this.id = id;
+		this.corpo = corpo;
+		this.titulo = titulo;
+		this.idUsuario = idUsuario;
+		this.dtPostagem = dtPostagem;
+	}
 	public void setId(int id) {
 		this.id = id;
 	}
