@@ -20,6 +20,8 @@ public class Postagem {
 	private String titulo;
 	@Column(name = "id_usuario")
 	private int idUsuario;
+	@Column(name = "id_topico")
+	private int idTopico;
 	@Column(name = "dt_postagem")
 	private Date dtPostagem;
 	public int getId() {
@@ -27,13 +29,14 @@ public class Postagem {
 	}
 	public Postagem() {
 	}
-	public Postagem(int id, String corpo, String titulo, int idUsuario, Date dtPostagem) {
+	public Postagem(int id, String corpo, String titulo, int idUsuario, Date dtPostagem, int idTopico) {
 		super();
 		this.id = id;
 		this.corpo = corpo;
 		this.titulo = titulo;
 		this.idUsuario = idUsuario;
 		this.dtPostagem = dtPostagem;
+		this.idTopico = idTopico;
 	}
 	public void setId(int id) {
 		this.id = id;
@@ -61,6 +64,12 @@ public class Postagem {
 	}
 	public void setDtPostagem(Date dtPostagem) {
 		this.dtPostagem = dtPostagem;
+	}
+	public int getIdTopico() {
+		return idTopico;
+	}
+	public void setIdTopico(int idTopico) {
+		this.idTopico = idTopico;
 	}
 	
 }

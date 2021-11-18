@@ -12,4 +12,7 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
 	@Query("SELECT u FROM Usuario u WHERE u.email = :email and u.senha = :senha")
 	public Usuario findByEmailSenha(@Param("email")String
 			email, @Param("senha")String senha); 
+	
+	@Query("SELECT u FROM Usuario u WHERE u.email = :email")
+	public Usuario findByEmail(@Param("email")String email); 
 }
