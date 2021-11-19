@@ -49,6 +49,7 @@ public class UsuarioController {
 
 		return usuario;
 	}
+	
 	@CrossOrigin
 	@GetMapping("/hello")
 	public String hello() {
@@ -95,5 +96,34 @@ public class UsuarioController {
 		}
 
 		return usuario;
+	}
+	
+	@CrossOrigin
+	@PostMapping(path = "/salvarNovoTopico",
+			consumes = MediaType.APPLICATION_JSON_VALUE, 
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public Topico salvarNovoTopico(@RequestBody String s) {
+		Gson gson = new Gson();
+		Topico novoTopico = gson.fromJson(s, Topico.class);
+
+		novoTopico = repositoryTopico.save(novoTopico);
+
+		return novoTopico;
+	}
+	
+	
+	@CrossOrigin
+	@PostMapping(path = "/salvarNovaPostagem",
+			consumes = MediaType.APPLICATION_JSON_VALUE, 
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public Postagem salvarNovaPostagem(@RequestBody String s) {
+		Gson gson = new Gson();
+		Postagem novaPostagem = gson.fromJson(s, Postagem.class);
+
+		novaPostagem = repositoryPostagem.save(novaPostagem);
+
+		return novaPostagem;
 	}
 }

@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Formula;
+
 @Entity
 @Table(name = "postagem")
 public class Postagem {
@@ -22,6 +24,8 @@ public class Postagem {
 	private String titulo;
 	@Column(name = "id_usuario")
 	private int idUsuario;
+	@Formula("(select top 1 u.nome from usuario u where u.id = id_usuario)")
+	private String nomeUsuario;
 	@Column(name = "id_topico")
 	private int idTopico;
 	@Column(name = "dt_postagem")
@@ -72,6 +76,12 @@ public class Postagem {
 	}
 	public void setIdTopico(int idTopico) {
 		this.idTopico = idTopico;
+	}
+	public String getNomeUsuario() {
+		return nomeUsuario;
+	}
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
 	}
 	
 }
